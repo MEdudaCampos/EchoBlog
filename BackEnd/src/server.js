@@ -10,7 +10,7 @@ import Postagem from "./models/postagensModels.js"
 
 //importar rotas
 import postagensRoutes from "./routes/postagensRoutes.js";
-
+import usuariosRoutes from "./routes/usuariosRoutes.js"
 
 const PORT = process.env.PORT
 const app = express()
@@ -28,3 +28,4 @@ conn.sync().then(() => {
 }).catch()
 
 app.use("/postagens", postagensRoutes)
+app.use("/usuarios", usuariosRoutes)
