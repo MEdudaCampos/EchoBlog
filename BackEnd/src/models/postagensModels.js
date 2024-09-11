@@ -17,10 +17,6 @@ const Postagem = conn.define("postagens", {
         allowNull: false,
         required: true
     },
-    dataPublicacao: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
     autor: {
         type: DataTypes.STRING,
         allowNull: false,

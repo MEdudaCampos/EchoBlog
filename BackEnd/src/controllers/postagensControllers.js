@@ -4,11 +4,19 @@ import Postagem from "../models/postagensModels.js";
 //criar postagem RF01
 export const createPostagem = async (request, response) => {
     const { titulo, conteudo, autor } = request.body;
+    let imagem
+    if (request.file) {
+        imagem = request.file.filename
+    } else {
+        imagem = "postagemDefaut.png"
+    }
     const novaPostagem = {
         titulo,
         conteudo,
         autor,
+        imagem
     };
+
     try {
         await Postagem.create(novaPostagem);
         response.status(201).json({ message: "Postagem publicada com sucesso" })
