@@ -1,8 +1,12 @@
-import { Sequelize } from "sequelize"
+import { Sequelize } from "sequelize";
+import dontenv from "dotenv";
+import db from "./database.js";
 
-const conn = new Sequelize("EchoBlog", "root", "Sen@iDev77!.", {
+dontenv.config();
+
+const conn = new Sequelize(db.bd, db.user, db.password, {
     host: "localhost",
-    dialect: "mysql"
-})
+    dialect: "mysql",
+});
 
 export default conn;
